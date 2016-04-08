@@ -5,9 +5,13 @@ import uuid from '../utils/uuid';
 const initialState = [
   {
     id            : uuid(),
-    name          : 'Steve Pereira',
-    email_address : 'steve@statflo.com',
-    phone_number  : '(647) 299-8420'
+    name          : 'Steve Thomas',
+    email_address : 'steven.thomas@shopify.com'
+  },
+  {
+    id            : uuid(),
+    name          : 'Michael Patten',
+    email_address : 'michael.patten@shopify.com'
   },
   {
     id            : uuid(),

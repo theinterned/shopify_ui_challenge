@@ -7,7 +7,7 @@ describe('ContactActions', () => {
     it('should add the passed contact', () =>{
       const contact = {
         name          : 'Test Contact',
-        email_address : 'test@statflo.com',
+        email_address : 'test@shopify.com',
         phone_number  : '(416) 123-4567'
       }
       const expectedResult = {

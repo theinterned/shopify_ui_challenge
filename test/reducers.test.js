@@ -7,13 +7,17 @@ describe('contactReducer', () => {
   it('should return the default state', () => {
     expect(contactReducer(undefined, {})).toEqual([
       {
-        id            : 1,
-        name          : 'Steve Pereira',
-        email_address : 'steve@statflo.com',
-        phone_number  : '(647) 299-8420'
+        id            : uuid(),
+        name          : 'Steve Thomas',
+        email_address : 'steven.thomas@shopify.com'
       },
       {
-        id            : 2,
+        id            : uuid(),
+        name          : 'Michael Patten',
+        email_address : 'michael.patten@shopify.com'
+      },
+      {
+        id            : uuid(),
         name          : 'Ned Schwartz',
         email_address : 'ned@theinterned.net',
         phone_number  : '(416) 624-4737'
@@ -23,7 +27,7 @@ describe('contactReducer', () => {
   it('should add a passed contact to the list of contacts', () => {
     let contact = {
       name          : 'Test Contact',
-      email_address : 'test@statflo.com',
+      email_address : 'test@shopify.com',
       phone_number  : '(416) 123-4567'
     };
     let action = {

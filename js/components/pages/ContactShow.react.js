@@ -19,7 +19,7 @@ class ContactShow extends Component {
       const {name, phone_number, email_address, id} = contact;
       let email;
       if (email_address) {
-        const subject = "I'd like to invite you to join my professional network on Statflo."
+        const subject = "I'd like to invite you to join my professional network on Shopify."
         const mailto = encodeURI(`mailto:${email_address}?subject=${subject}`);
         email = <a href={mailto}>{email_address}</a>
       } else {
