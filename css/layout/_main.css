@@ -1,0 +1,8 @@
+.main {
+  max-width: calc(30 * $lh);
+  min-height: calc(10 * $lh);
+  margin: 0 auto;
+  background-color: white;
+  padding: $lh;
+  box-shadow: $mid-grey 0 3px 3px 3px;
+}

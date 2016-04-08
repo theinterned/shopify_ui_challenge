@@ -1,0 +1,50 @@
+.listing {
+  margin: 0 calc(-.5 * $lh);
+  padding: 0;
+  list-style: none;
+}
+
+.listing__item {
+  border-bottom: 1px solid $mid-grey;
+}
+.listing__wrap-link {
+  display: block;
+  color: $text-color;
+  padding: $lh calc(.5 * $lh);
+  min-height: calc(5 * $lh);
+}
+.listing__wrap-link:hover {
+  background-color: white;
+  box-shadow: $mid-grey 0 3px 3px 3px;
+}
+.listing__header {
+  margin: 0;
+  color: $brand-color;
+}
+.listing__wrap-link:hover .listing__header {
+  color: $dark-brand-color;
+}
+
+@media screen and (min-width: 480px) {
+  .listing__item {
+    display: inline-block;;
+    width: 48%;
+    margin-right: 2%;
+    vertical-align: top;
+  }
+  .listing__wrap-link {
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 740px) {
+  .listing__item {
+    width: 30%;
+    margin-right: 3%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .listing__item {
+    width: 23%;
+    margin-right: 2%;
+  }
+}

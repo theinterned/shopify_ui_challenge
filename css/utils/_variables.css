@@ -1,0 +1,18 @@
+/*This file contains all application-wide CSS variables.*/
+
+$text-font-stack: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
+
+$font-size: 16px;
+$lh-ratio: 1.25;
+$lh: $(lh-ratio)rem;
+
+$text-color: #373f46;
+$brand-color: #59a5dc;
+$dark-brand-color: #2e6086;
+$light-grey: #ECF5FA;
+$mid-grey: #DEEBF7;
+$dark-grey: #333;
+$border-color: #ccc;
+
+$max-width: 968px;

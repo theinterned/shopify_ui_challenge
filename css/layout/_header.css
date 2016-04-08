@@ -1,0 +1,23 @@
+/*This file contains all styles related to the header of the site/application.*/
+
+.header {
+  background-color: $brand-color;
+  margin: 0 calc($lh * -1) $lh;
+  padding: $lh $lh 0;
+}
+.header__title {
+  float: left;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
+}
+.header__heading {
+  color: $dark-brand-color;
+  font-size: calc(1.5 * $lh);
+  line-height: 1.333;
+  margin: 0 0 $lh;
+}
+.header__toolbar {
+  text-align: right;
+  float: right;
+  min-width: calc(10 * $lh);
+  margin: 0 0 $lh;
+}
