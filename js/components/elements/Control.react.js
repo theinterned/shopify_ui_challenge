@@ -20,7 +20,8 @@ class Control extends React.Component {
     return this.props.value;
   }
   render() {
-    let {attr, label, value, type, required} = this.props;
+    let {attr, label, type, required} = this.props;
+    let value = this.value();
     const isRequired = (required && (required === "true" || required === true));
     console.log(required == 'true');
     let controlGroupClass = "control-group";

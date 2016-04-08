@@ -15,3 +15,8 @@ dd {
   clear: right;
   font-weight: bold;
 }
+fieldset {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}

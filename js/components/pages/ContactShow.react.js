@@ -43,6 +43,7 @@ class ContactShow extends Component {
           </div>
           <div className="header__toolbar">
             <Link to="/contacts" className="back button" >Back to list</Link>
+            <Link to={`/contact/${contactID}/edit`} className="submit button" >Edit</Link>
           </div>
         </header>
         <main className="main">
