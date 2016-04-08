@@ -1,7 +1,6 @@
 /*This file contains all application-wide CSS variables.*/
 
-$text-font-stack: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;
+$text-font-stack: Avenir Next, Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
 
 $font-size: 16px;
 $lh-ratio: 1.25;
