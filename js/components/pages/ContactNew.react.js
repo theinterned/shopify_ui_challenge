@@ -6,7 +6,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import Control from '../elements/Control.react';
+import ContactForm from '../views/ContactForm.react';
 import { addContact } from '../../actions/contactActions';
 
 class ContactNew extends Component {
@@ -22,12 +22,7 @@ class ContactNew extends Component {
     this.props.dispatch(addContact(contact, redirect));
   }
   deserialize() {
-    const {name, phone_number, email_address} = this.refs;
-    return {
-      name          : name.value(),
-      phone_number  : phone_number.value(),
-      email_address : email_address.value()
-    }
+    return this.refs.contact_form.deserialize();
   }
   render() {
     return (
@@ -44,9 +39,7 @@ class ContactNew extends Component {
         </header>
         <main className="main">
           <h2 className="header__subhead">Add a contact</h2>
-          <Control ref="name" attr="name" label="Name" type="text" required="true" />
-          <Control ref="phone_number" attr="phone_number" label="Phone" type="tel" />
-          <Control ref="email_address" attr="email_address" label="Email" type="email" />
+          <ContactForm ref="contact_form" />
         </main>
         </form>
       </div>
