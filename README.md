@@ -2,18 +2,20 @@
 
 ## Features
 
-1. **List all Leads**
-  * The app is cold-started with 2 leads stubbed into the initialState or the redux store.
+1. **List all Contacts**
+  * The app is cold-started with 3 contacts stubbed into the initialState of the redux store.
   * The list is responsive.
-  * From here you can *create a new lead* via a button in the header or navigate to the *detail screen* of an existing lead by clicking on a list item.
-2. **Add a lead**
+  * From here you can *create a new contact* via a button in the header or navigate to the *detail screen* of an existing contact by clicking on a list item.
+2. **Add a contact**
   * Just covers the basics: Name, phone and email.
   * Name is a required field although there's no validation for phone number (email validation is done by the `<input type="email" />` html5 element).
-  * From here you can *back to the list* via cancel button in the header, or *save the lead* and navigate to that lead's details.
-3. **View details of a lead**
-  * Pretty basics output of the Contact detials on a particular lead.
-  * Click the email address to send the lead an email! The subject of the email is a reference to a [joke by Frank Chimero](http://www.frankchimero.com/writing/new-yorker/).
+  * From here you can *back to the list* via cancel button in the header, or *save the contact* and navigate to that contact's details.
+3. **View details of a contact**
+  * Pretty basics output of the Contact detials on a particular contact.
+  * Click the email address to send the contact an email! The subject of the email is a reference to a [joke by Frank Chimero](http://www.frankchimero.com/writing/new-yorker/).
   * From here you can go *back to the list* via back button in the header.
+4. **Edit a contact**
+  * reuses the same contact form component as the create a conatct page.
 4. **CSS styles**
   * The CSS is pretty simple and clean with a theme that draws inspiration from your [marketing site](http://www.shopify.com/).
   * Special attention was given to the styling of the forms which have a vaguely Material Design inspired lined-input look.
