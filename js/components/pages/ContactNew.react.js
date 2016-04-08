@@ -35,7 +35,7 @@ class ContactNew extends Component {
         <form action='post' onSubmit={(e) => this.handleSubmit(e) }>
         <header className="header clearfix">
           <div className="header__title">
-            <h1 className="header__heading">Leads!</h1>
+            <h1 className="header__heading">Shopify UI Test</h1>
           </div>
           <div className="header__toolbar">
             <Link to="/contacts" className="cancel button" >Cancel</Link>
@@ -43,7 +43,7 @@ class ContactNew extends Component {
           </div>
         </header>
         <main className="main">
-          <h2 className="header__subhead">Add a lead</h2>
+          <h2 className="header__subhead">Add a contact</h2>
           <Control ref="name" attr="name" label="Name" type="text" required="true" />
           <Control ref="phone_number" attr="phone_number" label="Phone" type="tel" />
           <Control ref="email_address" attr="email_address" label="Email" type="email" />

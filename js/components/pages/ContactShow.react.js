@@ -39,7 +39,7 @@ class ContactShow extends Component {
       <div>
         <header className="header clearfix">
           <div className="header__title">
-            <h1 className="header__heading">Leads!</h1>
+            <h1 className="header__heading">Shopify UI Test</h1>
           </div>
           <div className="header__toolbar">
             <Link to="/contacts" className="back button" >Back to list</Link>
