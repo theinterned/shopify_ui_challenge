@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha --compilers js:babel-core/register --recursive",
-    "test:watch": "npm test -- --watch",
+    "test-watch": "npm test -- --watch",
     "start": "cross-env NODE_ENV=development node server.dev.js",
     "build": "npm run test && cross-env NODE_ENV=production webpack --config webpack.prod.config.js --progress --colors -p",
     "serve": "cross-env NODE_ENV=production node server.prod.js"
@@ -39,6 +39,7 @@
     "babel-preset-react": "^6.0.0",
     "babel-preset-react-hmre": "1.0.1",
     "babel-preset-stage-2": "^6.0.0",
+    "chai": "^3.5.0",
     "cross-env": "1.0.6",
     "css-loader": "^0.23.0",
     "cssnano": "^3.0.1",

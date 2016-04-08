@@ -1,6 +1,8 @@
-import expect from 'expect';
 import { addContact } from '../js/actions/contactActions';
 import { ADD_CONTACT } from '../js/constants/AppConstants';
+
+import chai from 'chai';
+const expect = chai.expect;
 
 describe('ContactActions', () => {
   describe('addContact', () => {
@@ -10,14 +12,14 @@ describe('ContactActions', () => {
         email_address : 'test@shopify.com',
         phone_number  : '(416) 123-4567'
       }
-      const expectedResult = {
+      let expectedResult = {
         type: ADD_CONTACT,
-        id: 3,
         contact
       }
       let result = addContact(contact);
-      expect(result).toEqual(expectedResult);
-      expect(result.id).toEqual(3);
+      expectedResult.id = result.id; // hacky way to get uuid to match
+      expect(result.id).to.be.defined;
+      expect(result).to.eql(expectedResult);
     });
   });
 });

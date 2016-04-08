@@ -1,28 +1,32 @@
-import expect from 'expect';
 import contactReducer from '../js/reducers/contactReducer';
 import * as constants from '../js/constants/AppConstants';
+
+import chai from 'chai';
+const expect = chai.expect;
 
 
 describe('contactReducer', () => {
   it('should return the default state', () => {
-    expect(contactReducer(undefined, {})).toEqual([
+    const result = contactReducer(undefined, {});
+    let actual = [
       {
-        id            : uuid(),
+        id            : result[0].id, // hacky way to get uuids to match
         name          : 'Steve Thomas',
         email_address : 'steven.thomas@shopify.com'
       },
       {
-        id            : uuid(),
+        id            : result[1].id, // hacky way to get uuids to match
         name          : 'Michael Patten',
         email_address : 'michael.patten@shopify.com'
       },
       {
-        id            : uuid(),
+        id            : result[2].id, // hacky way to get uuids to match
         name          : 'Ned Schwartz',
         email_address : 'ned@theinterned.net',
         phone_number  : '(416) 624-4737'
       }
-    ]);
+    ]
+    expect(result).to.eql(actual);
   });
   it('should add a passed contact to the list of contacts', () => {
     let contact = {
@@ -35,14 +39,15 @@ describe('contactReducer', () => {
       id: 3,
       contact
     };
-    expect(contactReducer(undefined, {}).length).toEqual(2);
-    let nextState = contactReducer(undefined, action);
-    expect(nextState.length).toEqual(3);
-    expect(nextState[2].id).toEqual(3);
-    expect(nextState[2].name).toEqual('Test Contact');
+    let state = contactReducer(undefined, {});
+    expect(state.length).to.equal(3);
+    let nextState = contactReducer(state, action);
+    expect(nextState.length).to.equal(4);
+    expect(nextState[3].id).to.equal(3);
+    expect(nextState[3].name).to.equal('Test Contact');
     nextState = contactReducer({}, action); // start with an emapty previous state
-    expect(nextState.length).toEqual(1);
-    expect(nextState[0].id).toEqual(3);
-    expect(nextState[0].name).toEqual('Test Contact');
+    expect(nextState.length).to.equal(1);
+    expect(nextState[0].id).to.equal(3);
+    expect(nextState[0].name).to.equal('Test Contact');
   });
 });
