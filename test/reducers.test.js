@@ -64,7 +64,7 @@ describe('contactReducer', ()=>{
     const initialState = contactReducer(defaultState, addAction);
 
     it("should edit the contact matching the passed id", ()=>{
-      let initialTarget = initialState[3];
+      const initialTarget = initialState[3];
       expect(initialState.length).to.equal(4);
       expect(initialTarget.id).to.equal(33);
       expect(initialTarget.name).to.equal('Test Contact');
@@ -74,7 +74,19 @@ describe('contactReducer', ()=>{
       expect(actualTarget.id).to.equal(33);
       expect(actualTarget.name).to.equal('Changed Contact');
     });
-    it("should not change the passed state");
-    it("should silently fail if the passed ID is not found");
+    it("should not change the passed state", ()=>{
+      const initialTarget = initialState[3];
+      expect(initialTarget.name).to.equal('Test Contact');
+      const actualState = contactReducer(initialState, editAction);
+      const actualTarget = actualState[3];
+      expect(actualTarget).not.to.equal(initialTarget);
+      expect(initialTarget.name).to.equal('Test Contact');
+      expect(actualTarget.name).to.equal('Changed Contact');
+    });
+    it("should silently fail if the passed ID is not found", ()=>{
+      const wrongIDEditAction = Object.assign({}, editAction, {id: 333});
+      const actualState = contactReducer(initialState, wrongIDEditAction);
+      expect(actualState.length).to.equal(initialState.length);
+    });
   });
 });
