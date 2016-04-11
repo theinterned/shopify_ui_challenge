@@ -14,7 +14,6 @@ class ContactNew extends Component {
     e.preventDefault();
     const history = this.props.history;
     const contact = this.deserialize();
-    console.log('handleSubmit', e, this);
     const redirect = (id, contact) => {
       console.log('navigationg to', id, contact, this);
       history.push(`/contact/${id}`);

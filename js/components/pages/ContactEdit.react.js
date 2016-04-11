@@ -7,8 +7,24 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import ContactForm from '../views/ContactForm.react';
+import { editContact } from '../../actions/contactActions';
 
 class ContactShow extends Component {
+  handleSubmit(e) {
+    e.preventDefault();
+    const history = this.props.history;
+    const contactID = this.props.routeParams.id;
+    const contact = this.deserialize();
+    const redirect = (id, contact) => {
+      console.log('navigationg to', id, contact, this);
+      history.push(`/contact/${id}`);
+    }
+    console.log(contactID, contact);
+    this.props.dispatch(editContact(contactID, contact, redirect));
+  }
+  deserialize() {
+    return this.refs.contact_form.deserialize();
+  }
   selectByID (id, contacts) {
     return contacts.find(c => c.id == id);
   };
