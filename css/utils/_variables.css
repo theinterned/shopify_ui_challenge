@@ -6,12 +6,12 @@ $font-size: 16px;
 $lh-ratio: 1.25;
 $lh: $(lh-ratio)rem;
 
-$text-color: #373f46;
-$brand-color: #59a5dc;
-$dark-brand-color: #2e6086;
-$light-grey: #ECF5FA;
-$mid-grey: #DEEBF7;
-$dark-grey: #333;
+$text-color: #767676;
+$brand-color: #7ab55c;
+$dark-brand-color: color($brand-color shade(10));
+$light-grey: #f9fafa;
+$mid-grey: #ced3d3;
+$dark-grey: #30373b;
 $border-color: #ccc;
 
 $max-width: 968px;
