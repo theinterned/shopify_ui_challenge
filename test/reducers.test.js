@@ -25,27 +25,56 @@ describe('contactReducer', ()=>{
     email_address : 'test@shopify.com',
     phone_number  : '(416) 123-4567'
   };
+  const addAction = {
+    type: ADD_CONTACT,
+    id: 33,
+    contact
+  };
+
+
   it('should return the default state', ()=>{
     expect(defaultResult).to.eql(defaultState);
   });
+
   describe('should handle ADD_CONTACT action', ()=>{
-    const addAction = {
-      type: ADD_CONTACT,
-      id: 3,
-      contact
-    };
     it('should add a passed contact to the list of contacts', ()=>{
       expect(defaultState.length).to.equal(3);
       const actual = contactReducer(defaultState, addAction);
       expect(actual.length).to.equal(4);
-      expect(actual[3].id).to.equal(3);
+      expect(actual[3].id).to.equal(33);
       expect(actual[3].name).to.equal('Test Contact');
     });
     it('should add the passed contact as the first member of an emapty contact list', ()=>{
       const actual = contactReducer({}, addAction); // start with an emapty previous state
       expect(actual.length).to.equal(1);
-      expect(actual[0].id).to.equal(3);
+      expect(actual[0].id).to.equal(33);
       expect(actual[0].name).to.equal('Test Contact');
     });
+  });
+
+  describe('should handle EDIT_CONTACT action', ()=>{
+    const contactChange = {
+      name : 'Changed Contact'
+    }
+    const editAction = {
+      type: EDIT_CONTACT,
+      id: 33,
+      contact: contactChange
+    }
+    const initialState = contactReducer(defaultState, addAction);
+
+    it("should edit the contact matching the passed id", ()=>{
+      let initialTarget = initialState[3];
+      expect(initialState.length).to.equal(4);
+      expect(initialTarget.id).to.equal(33);
+      expect(initialTarget.name).to.equal('Test Contact');
+      const actualState = contactReducer(initialState, editAction);
+      const actualTarget = actualState[3];
+      expect(actualState.length).to.equal(4);
+      expect(actualTarget.id).to.equal(33);
+      expect(actualTarget.name).to.equal('Changed Contact');
+    });
+    it("should not change the passed state");
+    it("should silently fail if the passed ID is not found");
   });
 });

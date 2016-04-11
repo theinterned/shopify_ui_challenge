@@ -1,5 +1,4 @@
-import { ADD_CONTACT } from '../constants/AppConstants';
-import assignToEmpty from '../utils/assign';
+import { ADD_CONTACT, EDIT_CONTACT } from '../constants/AppConstants';
 import uuid from '../utils/uuid';
 
 const initialState = [
@@ -25,8 +24,11 @@ const contact = (state = initialState, action) => {
   Object.freeze(state); // Don't mutate state directly, always use assign()!
   switch (action.type) {
     case ADD_CONTACT:
-      return assignToEmpty({id: action.id}, action.contact);
+      return Object.assign({}, {id: action.id}, action.contact);
       break;
+    case EDIT_CONTACT:
+      if (state.id !== action.id) return state;
+      return Object.assign({}, state, action.contact);
     default:
       return state
   }
@@ -39,6 +41,8 @@ const contacts = (state = initialState, action) => {
         ...state,
         contact(undefined, action)
       ];
+    case EDIT_CONTACT:
+      return state.map(c => contact(c, action));
     default:
       return state;
   }
