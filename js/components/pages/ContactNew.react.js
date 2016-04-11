@@ -15,7 +15,6 @@ class ContactNew extends Component {
     const history = this.props.history;
     const contact = this.deserialize();
     const redirect = (id, contact) => {
-      console.log('navigationg to', id, contact, this);
       history.push(`/contact/${id}`);
     }
     this.props.dispatch(addContact(contact, redirect));
@@ -50,7 +49,6 @@ class ContactNew extends Component {
 
 // Which props do we want to inject, given the global state?
 function select(state) {
-  console.log('select', state);
   return {
     contacts: state.contacts
   };

@@ -16,10 +16,8 @@ class ContactShow extends Component {
     const contactID = this.props.routeParams.id;
     const contact = this.deserialize();
     const redirect = (id, contact) => {
-      console.log('navigationg to', id, contact, this);
       history.push(`/contact/${id}`);
     }
-    console.log(contactID, contact);
     this.props.dispatch(editContact(contactID, contact, redirect));
   }
   deserialize() {
