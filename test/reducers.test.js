@@ -1,53 +1,51 @@
 import contactReducer from '../js/reducers/contactReducer';
-import * as constants from '../js/constants/AppConstants';
+import {ADD_CONTACT, EDIT_CONTACT} from '../js/constants/AppConstants';
 
 import chai from 'chai';
 const expect = chai.expect;
 
-
-describe('contactReducer', () => {
-  it('should return the default state', () => {
-    const result = contactReducer(undefined, {});
-    let actual = [
-      {
-        id            : result[0].id, // hacky way to get uuids to match
-        name          : 'Steve Thomas',
-        email_address : 'steven.thomas@shopify.com'
-      },
-      {
-        id            : result[1].id, // hacky way to get uuids to match
-        name          : 'Michael Patten',
-        email_address : 'michael.patten@shopify.com'
-      },
-      {
-        id            : result[2].id, // hacky way to get uuids to match
-        name          : 'Ned Schwartz',
-        email_address : 'ned@theinterned.net',
-        phone_number  : '(416) 624-4737'
-      }
-    ]
-    expect(result).to.eql(actual);
+describe('contactReducer', ()=>{
+  const defaultResult = contactReducer(undefined, {});
+  const defaultState = [{
+    id            : defaultResult[0].id, // hacky way to get uuids to match
+    name          : 'Steve Thomas',
+    email_address : 'steven.thomas@shopify.com'
+  },{
+    id            : defaultResult[1].id, // hacky way to get uuids to match
+    name          : 'Michael Patten',
+    email_address : 'michael.patten@shopify.com'
+  },{
+    id            : defaultResult[2].id, // hacky way to get uuids to match
+    name          : 'Ned Schwartz',
+    email_address : 'ned@theinterned.net',
+    phone_number  : '(416) 624-4737'
+  }];
+  const contact = {
+    name          : 'Test Contact',
+    email_address : 'test@shopify.com',
+    phone_number  : '(416) 123-4567'
+  };
+  it('should return the default state', ()=>{
+    expect(defaultResult).to.eql(defaultState);
   });
-  it('should add a passed contact to the list of contacts', () => {
-    let contact = {
-      name          : 'Test Contact',
-      email_address : 'test@shopify.com',
-      phone_number  : '(416) 123-4567'
-    };
-    let action = {
-      type: constants.ADD_CONTACT,
+  describe('should handle ADD_CONTACT action', ()=>{
+    const addAction = {
+      type: ADD_CONTACT,
       id: 3,
       contact
     };
-    let state = contactReducer(undefined, {});
-    expect(state.length).to.equal(3);
-    let nextState = contactReducer(state, action);
-    expect(nextState.length).to.equal(4);
-    expect(nextState[3].id).to.equal(3);
-    expect(nextState[3].name).to.equal('Test Contact');
-    nextState = contactReducer({}, action); // start with an emapty previous state
-    expect(nextState.length).to.equal(1);
-    expect(nextState[0].id).to.equal(3);
-    expect(nextState[0].name).to.equal('Test Contact');
+    it('should add a passed contact to the list of contacts', ()=>{
+      expect(defaultState.length).to.equal(3);
+      const actual = contactReducer(defaultState, addAction);
+      expect(actual.length).to.equal(4);
+      expect(actual[3].id).to.equal(3);
+      expect(actual[3].name).to.equal('Test Contact');
+    });
+    it('should add the passed contact as the first member of an emapty contact list', ()=>{
+      const actual = contactReducer({}, addAction); // start with an emapty previous state
+      expect(actual.length).to.equal(1);
+      expect(actual[0].id).to.equal(3);
+      expect(actual[0].name).to.equal('Test Contact');
+    });
   });
 });
