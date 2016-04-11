@@ -15,7 +15,7 @@
 }
 .listing__wrap-link:hover {
   background-color: white;
-  box-shadow: $mid-grey 0 3px 3px 3px;
+  box-shadow: $mid-grey 0 1px 3px 1px;
 }
 .listing__header {
   margin: 0;

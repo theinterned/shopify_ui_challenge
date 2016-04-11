@@ -7,10 +7,10 @@
 }
 .header__title {
   float: left;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
+  text-shadow: 1px 1px 1px $dark-brand-color;
 }
 .header__heading {
-  color: $dark-brand-color;
+  color: white;
   font-size: calc(1.5 * $lh);
   line-height: 1.333;
   margin: 0 0 $lh;
