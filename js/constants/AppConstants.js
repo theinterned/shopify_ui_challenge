@@ -7,3 +7,4 @@
  * export const YOUR_ACTION_CONSTANT = 'YOUR_ACTION_CONSTANT';
  */
 export const ADD_CONTACT = 'ADD_CONTACT';
+export const EDIT_CONTACT = 'EDIT_CONTACT';
