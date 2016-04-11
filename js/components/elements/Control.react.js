@@ -23,7 +23,6 @@ class Control extends React.Component {
     let {attr, label, type, required} = this.props;
     let value = this.value();
     const isRequired = (required && (required === "true" || required === true));
-    console.log(required == 'true');
     let controlGroupClass = "control-group";
     if (this.state && this.state.focused) {
       controlGroupClass += " focused";
