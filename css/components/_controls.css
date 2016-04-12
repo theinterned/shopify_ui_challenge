@@ -1,35 +1,47 @@
-.control-group {
-  display: flex;
-  margin-bottom: $lh;
+
+.control {
+  width: 100%;
+
+  &-group {
+    display: flex;
+    margin-bottom: $lh;
+
+    &:hover {
+      .control-label,  .control {
+        border-color: $brand-color;
+      }
+    }
+    &.focused {
+      .control-label, .control {
+        border-color: $dark-brand-color;
+      }
+      .control-label {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-label, & {
+    border: 1px solid $border-color;
+    border-width: 0 0 1px 0;
+  }
+
+  &-label {
+    flex: 1;
+    max-width: calc(4 * $lh);
+    color: $dark-brand-color;
+  }
 }
-.control-label, .control {
-  border: 1px solid $border-color;
-  border-width: 0 0 1px 0;
-}
-.control-group:hover .control-label, .control-group:hover .control {
-  border-color: $brand-color;
-}
-.control-group.focused .control-label, .control-group.focused .control {
-  border-color: $dark-brand-color;
-}
-.control-group.focused .control-label {
-  font-weight: bold;
-}
-.control-label {
-  flex: 1;
-  max-width: calc(4 * $lh);
-  color: $dark-brand-color;
-}
+
 .controls {
   flex: 2;
 }
-.control {
-  width: 100%;
-}
+
 input[type=text], input[type=email], input[type=tel] {
   padding: 0 .4em;
   background-color: transparent;
-}
-input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus {
-  outline: none;
+
+  &:focus {
+    outline: none;
+  }
 }

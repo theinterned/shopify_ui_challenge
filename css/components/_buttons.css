@@ -1,8 +1,5 @@
 /*This file contains all styles related to the button component.*/
 
-$button-lh: calc(2 * $lh-ratio);
-$button-height: calc(1rem * $button-lh);
-
 button, .button, .button--light {
   display: inline-block;
   background-color: $brand-color;
@@ -14,13 +11,14 @@ button, .button, .button--light {
   padding: 0 $lh;
   text-decoration: none;
   text-transform: uppercase;
+
+  &:hover{
+    background-color: $dark-brand-color;
+    color: white;
+  }
 }
 
 .button--light {
   background-color: white;
   color: $dark-brand-color;
-}
-button:hover, .button:hover, .button--light:hover {
-  background-color: $dark-brand-color;
-  color: white;
 }
