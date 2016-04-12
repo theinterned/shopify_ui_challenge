@@ -3,10 +3,15 @@
 /**
  * Clear inner floats
  */
-.clearfix::after {
-  clear: both;
-  content: '';
-  display: table;
+ @define-mixin clearfix {
+   &::after {
+     clear: both;
+     content: '';
+     display: table;
+   }
+ }
+.clearfix {
+  @mixin clearfix;
 }
 
 /**
@@ -14,11 +19,14 @@
  * 1. Needed in WebKit-based browsers because of an implementation bug;
  *    See: https://code.google.com/p/chromium/issues/detail?id=457146
  */
-.hide-text {
+@define-mixin hide-text {
   overflow: hidden;
   padding: 0; /* 1 */
   text-indent: 101%;
   white-space: nowrap;
+}
+.hide-text {
+  @mixin hide-text;
 }
 
 /**
@@ -26,7 +34,7 @@
  * Shamelessly borrowed from HTML5Boilerplate:
  * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
  */
-.visually-hidden {
+@mixin visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -35,4 +43,7 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+.visually-hidden {
+  @mixin visually-hidden;
 }

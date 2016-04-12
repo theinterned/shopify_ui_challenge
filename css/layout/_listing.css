@@ -2,6 +2,7 @@
   margin: 0 calc(-.5 * $lh);
   padding: 0;
   list-style: none;
+  @mixin clearfix;
 }
 
 .listing__item {
