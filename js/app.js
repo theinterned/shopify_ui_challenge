@@ -17,11 +17,7 @@ import thunk from 'redux-thunk';
 import createHistory from 'history/lib/createBrowserHistory';
 
 // Import the pages
-import ContactList from './components/pages/ContactList.react';
-import ContactShow from './components/pages/ContactShow.react';
-import ContactEdit from './components/pages/ContactEdit.react';
-import ContactNew from './components/pages/ContactNew.react';
-import NotFoundPage from './components/pages/NotFound.react';
+import ForgotPassword from './components/pages/ForgotPassword.react';
 import App from './components/App.react';
 
 // Import the CSS file, which HtmlWebpackPlugin transfers to the build folder
@@ -47,12 +43,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={createHistory()}>
       <Route component={App}>
-        <Route path="/" component={ContactList} />
-        <Route path="/contact/new" component={ContactNew} />
-        <Route path="/contact/:id/edit" component={ContactEdit} />
-        <Route path="/contact/:id" component={ContactShow} />
-        <Route path="/contacts" component={ContactList} />
-        <Route path="*" component={NotFoundPage} />
+        <Route path="/" component={ForgotPassword} />
       </Route>
     </Router>
   </Provider>,

@@ -21,11 +21,12 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-  font-size: $font-size;
+  font-size: $base-font-size;
   line-height: $lh-ratio;
 }
 
 body {
+  font-size: $font-size;
 	font-family: $text-font-stack;
   padding: 0 $lh;
   background-color: $light-grey;

@@ -1,20 +1,32 @@
 /*This file contains all application-wide CSS variables.*/
 
+/* Base type grid */
 $text-font-stack: Avenir Next, Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
 
-$font-size: 16px;
-$lh-ratio: 1.25;
+$base-font-size: 10px;
+$font-size: 2.4rem;
+$lh-ratio: 2;
 $lh: $(lh-ratio)rem;
 
-$text-color: #767676;
+/* dimensions */
+$button-lh: calc(48 / 18);
+$button-height: calc(1rem * $button-lh);
+
+$input-lh: calc(48 / 18);
+$input-height: calc(1rem * $button-lh);
+
+/* colours */
 $brand-color: #7ab55c;
 $dark-brand-color: color($brand-color shade(20));
 $light-grey: #f9fafa;
-$mid-grey: #ced3d3;
+$mid-grey: #a9a9a9;
 $dark-grey: #30373b;
-$border-color: #ccc;
+$border-color: $mid-grey;
 
-$max-width: 968px;
+$text-color: $dark-grey;
 
-$button-lh: calc(2 * $lh-ratio);
-$button-height: calc(1rem * $button-lh);
+$placeholder-text: $mid-grey;
+$label-text: $mid-grey;
+
+$button-bg: $brand-color;
+$button-text: white;
